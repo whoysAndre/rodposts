@@ -1,0 +1,139 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from 'astro-cloudinary';
+import CodeBlock from "@components/react/CodeBlock";
+---
+
+<Layout 
+  title="Blog | CSS"
+  description="Aprende los fundamentos de CSS, cómo funciona, su sintaxis básica y cómo utilizarlo para estilizar sitios web y mejorar la presentación de tus páginas HTML."
+  keywords="CSS, fundamentos de CSS, diseño web, hojas de estilo, propiedades CSS, sintaxis CSS, desarrollo web, estilos web"  
+>
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Nov 28, 2016</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">Fundamentos CSS</h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298611/css_zcgxc7.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="imagen css"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción a CSS</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#quecss"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es CSS?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#funcionamiento"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Cómo Funciona CSS</a
+            >
+          </li>
+          <li>
+            <a
+              href="#sintaxis"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Sintaxis Básica de CSS</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">
+          Introducción a CSS: Estilizando el Mundo Web
+        </h1>
+        <p class="mb-4">
+          El desarrollo web no solo se trata de estructurar contenido, sino
+          también de presentarlo de manera atractiva y funcional. Aquí es donde
+          entra en juego CSS (Cascading Style Sheets). Si HTML es la estructura
+          de la página, CSS es la capa que da vida visual a esa estructura. En
+          este artículo, te presentaremos qué es CSS, cómo funciona, y cómo
+          puedes empezar a usarlo para diseñar páginas web impresionantes.
+        </p>
+      </article>
+
+      <article class="p-6 rounded-lg" id="quecss">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es CSS?</h1>
+        <p class="mb-4">
+          CSS (Cascading Style Sheets, en inglés) es un lenguaje de hojas de
+          estilo utilizado para describir la presentación de un documento HTML.
+          Permite controlar el diseño, los colores, las fuentes y la disposición
+          de los elementos dentro de una página web. Sin CSS, todas las páginas
+          web se verían iguales, con una estructura simple, sin estilo ni diseño
+          atractivo.
+        </p>
+      </article>
+
+      <article class="p-6 rounded-lg" id="funcionamiento">
+        <h1 class="text-3xl font-bold mb-6">Cómo Funciona CSS</h1>
+        <p class="mb-4">
+          CSS permite separar el contenido (escrito en HTML) del diseño. Puedes
+          definir los estilos de varios elementos HTML de una sola vez, sin
+          tener que modificar el código de cada elemento individualmente.
+        </p>
+      </article>
+
+      <article class="p-6 rounded-lg" id="sintaxis">
+        <h1 class="text-3xl font-bold mb-6">Sintaxis Básica de CSS</h1>
+        <p class="mb-4">
+          La estructura básica de una regla CSS se ve así:
+        </p>
+        <CodeBlock
+          language="html"
+          code=
+            `
+                selector {
+    propiedad: valor;
+}
+
+            `
+        />
+
+        <ul class="flex flex-col gap-4 mt-6">
+          <li>
+            <strong>Selector:</strong> 
+            Especifica el elemento HTML al que se aplicarán los estilos.
+          </li>
+          <li>
+            <strong>Propiedad:</strong> 
+            Es el estilo que deseas aplicar (por ejemplo, color, font-size, margin).
+          </li>
+          <li>
+            <strong>Valor:</strong> 
+            Define el valor que debe tomar esa propiedad (por ejemplo, red, 16px, 10px).
+          </li>
+        </ul>
+
+      </article>
+    </main>
+  </div>
+</Layout>

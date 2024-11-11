@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PostCard from "@components/posts/PostCard.astro";
+import MenuNav from "@components/ui/MenuNav.astro";
+---
+
+<Layout
+  title="Home | Posts"
+  description="Guía para empezar a especializarte en desarrollo web. Descubre las nuevas tecnologías, los mejores streamers y las recomendaciones de la comunidad."
+  keywords="desarrollo web, especialización, tecnologías, streamers, recomendaciones, tutoriales, aprender a programar" 
+>
+  <MenuNav />
+  <main class="mt-16">
+    <section class="w-full grid gap-8 md:grid-cols-6">
+      <div class="hidden md:flex justify-end col-span-6 mb-4">
+        <h3 class="font-bold">Extra</h3>
+      </div>
+
+      <PostCard
+        classes="col-span-6 md:col-span-4"
+        date="Nov 09, 2024"
+        time="4"
+        path="/posts/startnow"
+        srcImage="start_t2esxd"
+        title="¿Cómo empezar?"
+        imagePath="¿Cómo empezar?"
+        description="Guía para escoger que rama especializarte"
+        alt="imagen especialización"
+      />
+
+      <PostCard
+        classes="col-span-6 md:col-span-2"
+        path="/posts/extras"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731299496/extra_e1eszq.jpg"
+        date="Oct 10, 2022"
+        time="10"
+        alt="imagen extra"
+      />
+    </section>
+
+    <!-- TECHNOLOGIES - RECOMENTS - STREAMERS -->
+    <section class="w-full grid grid-cols-6 gap-8 mt-16">
+      <PostCard
+        classes="col-span-6 md:col-span-2"
+        path="/posts/extras"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298682/ecosistem_jhrex6.jpg"
+        date="Sep, 2024"
+        time="120"
+        title="Nuevas tecnologías"
+        description="Mira las ultimás tecnologías dedicadas al desarrollo web"
+        alt="novedades-desarrollo-web"
+      />
+      <PostCard
+        title="Streamers"
+        description="Mira a los mejores streamers que te ayudarán en tu día a día para ser un buen desarrollador"
+        classes="col-span-6 md:col-span-2"
+        path="/posts/extras"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298772/streamer_ivwt9k.jpg"
+        date="Ene 20, 2020"
+        time="12"
+        alt="tutoriales-streamers"
+      />
+      <PostCard
+        title="Mejores recomendaciones"
+        description="Sigue las recomendaciones extraidas de algunos foros y streamers"
+        classes="col-span-6 md:col-span-2"
+        path="/posts/extras"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298770/recomends_y4t3he.jpg"
+        date="Oct 10, 2022"
+        time="10"
+        alt="recomendaciones"
+      />
+    </section>
+  </main>
+</Layout>

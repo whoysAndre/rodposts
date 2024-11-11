@@ -1,0 +1,49 @@
+---
+import { CldImage } from 'astro-cloudinary';
+import { Icon } from 'astro-icon/components';
+
+interface Props {
+  classes?: string;
+  title?: string;
+  description?: string;
+  path: string;
+  imagePath?:string;
+  srcImage: string;
+  date: string;
+  time: string;
+  alt:string;
+}
+
+const { classes, title, description, srcImage, path, date, time, imagePath,alt } = Astro.props;
+---
+
+<div class={`${classes}`}>
+  <a href={path} class="relative">
+    <CldImage
+      width={1080}
+      height={720}
+      src={`${srcImage}`}
+      alt={alt}
+      class="h-80"
+    />
+    <div
+      class="absolute left-0 bottom-0 w-full h-24 flex items-center justify-between bg-gray-500 bg-opacity-65 p-5"
+    >
+      <p class="flex flex-col gap-2 text-white font-bold">
+        {date}
+        <span>{time} min read</span>
+      </p>
+
+      <p class="text-white hover:text-gray-200">{imagePath}</p>
+    </div>
+  </a>
+  <div class="mt-4">
+    <h3 class="text-2xl">{title}</h3>
+    <p class="mt-2">{description}</p>
+
+    <a href={`${path}`} class="flex items-center gap-2 mt-5 font-bold">
+      Leer post
+      <Icon name="icon-row-right" size={25} />
+    </a>
+  </div>
+</div>

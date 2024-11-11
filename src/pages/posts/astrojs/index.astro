@@ -1,0 +1,138 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from 'astro-cloudinary';
+---
+
+<Layout 
+  title="Post | Astro js"
+  description="Descubre Astro, un innovador framework de JavaScript para construir sitios web ultrarrápidos y eficientes. Aprende sobre sus principales características, cómo funciona y por qué es una opción prometedora para desarrolladores web."
+  keywords="Astro, framework JavaScript, desarrollo web, rendimiento web, pre-renderizado, hidratación bajo demanda, React, Vue, Svelte, sitios web rápidos"
+>
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Dic 10, 2022</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">Astro Js</h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298487/astro_tz71rw.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="Lenguaje astro js"
+    />
+  </header>
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#queastro"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es Astro?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#funcionamiento"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Cómo funciona Astro?</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">Introducción</h1>
+        <p class="mb-4">
+          En un mundo donde los tiempos de carga y el rendimiento web son más
+          críticos que nunca, los desarrolladores web siempre están buscando
+          formas de crear sitios rápidos, interactivos y eficientes. Si bien
+          existen muchas herramientas y frameworks populares para el desarrollo
+          web, Astro ha surgido como una opción única que está ganando
+          rápidamente popularidad en la comunidad de desarrollo web. Astro es un
+          framework de JavaScript diseñado para construir sitios web
+          ultrarrápidos sin sacrificar la flexibilidad ni la interactividad. Su
+          enfoque innovador permite minimizar el uso de JavaScript y maximizar
+          el rendimiento, haciendo que los sitios carguen más rápido y sean más
+          eficientes. Pero, lo que realmente lo distingue es su capacidad de
+          combinar varios frameworks como React, Vue y Svelte en un solo
+          proyecto, sin comprometer la calidad ni la velocidad. En este
+          artículo, exploraremos qué es Astro, cómo funciona, sus principales
+          características y por qué se ha convertido en una de las herramientas
+          más prometedoras para desarrolladores que buscan crear aplicaciones
+          web rápidas y fáciles de mantener. Si estás buscando una solución
+          moderna y de alto rendimiento para tus proyectos web, Astro podría ser
+          justo lo que necesitas.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="queastro">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es Astro?</h1>
+        <p class="mb-4">
+          Astro es un framework de JavaScript que se enfoca en la creación de
+          sitios web rápidos y optimizados, con una filosofía que promueve la
+          minimización de JavaScript en el navegador. A diferencia de otros
+          frameworks de desarrollo web como React, Vue o Svelte, Astro permite
+          la construcción de aplicaciones donde el HTML es pre-renderizado en el
+          servidor y solo se carga JavaScript cuando es necesario, lo que
+          resulta en sitios más rápidos y ligeros. Astro puede ser descrito como
+          un "framework para sitios estáticos" con la capacidad de incorporar
+          componentes dinámicos cuando se requiere, y soporta el uso de otros
+          frameworks populares como React, Vue y Svelte, todo en un solo
+          proyecto.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="funcionamiento">
+        <h1 class="text-3xl font-bold mb-6">¿Cómo funciona Astro?</h1>
+        <p class="mb-4">
+          Astro utiliza un motor de renderizado estático que pre-renderiza el
+          contenido en el servidor, generando HTML, CSS y JavaScript de manera
+          eficiente. Aquí te explico cómo se lleva a cabo este proceso:
+        </p>
+        <ul class="flex flex-col gap-4">
+          <li>
+            <strong>Construcción del proyecto: </strong>
+            <p>
+              En el proceso de desarrollo, puedes escribir componentes usando el
+              marco que prefieras (React, Vue, Svelte, o incluso solo HTML/CSS).
+            </p>
+          </li>
+          <li>
+            <strong>Pre-renderización:</strong>
+            <p>
+              Durante la construcción del proyecto, Astro pre-renderiza el
+              contenido estático (HTML) y lo coloca en las páginas. Esto
+              significa que cuando un usuario visita el sitio, lo único que el
+              navegador necesita cargar es HTML, CSS y los JavaScript mínimos.
+            </p>
+          </li>
+          <li>
+            <strong>Hydration bajo demanda:</strong>
+            <p>
+              Si necesitas funcionalidad interactiva (por ejemplo, un formulario
+              o un botón dinámico), Astro solo "hidrata" ese componente en el
+              cliente. Esto significa que el JavaScript solo se ejecuta cuando
+              es necesario.
+            </p>
+          </li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</Layout>

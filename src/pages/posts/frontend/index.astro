@@ -1,0 +1,61 @@
+---
+import MenuNav from "@components/ui/MenuNav.astro";
+import Layout from "../../../layouts/Layout.astro";
+import PostCard from "@components/posts/PostCard.astro";
+---
+
+<Layout 
+  title="Blog | Frontend"
+  description="Descubre los fundamentos del desarrollo web frontend: aprende HTML, CSS, JavaScript y React.js. Domina las bases de estos lenguajes y frameworks clave para convertirte en un desarrollador frontend exitoso."
+  keywords="desarrollo web, frontend, HTML, CSS, JavaScript, React.js, fundamentos, aprender a programar, tutoriales, guías"
+  >
+  <MenuNav />
+
+  <main class="mt-16">
+    <section class="w-full grid gap-8 md:grid-cols-6">
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298765/html_oasgef.jpg"
+        date="Jun 28, 2015"
+        time="15"
+        path="/posts/frontend/html"
+        title="Fundamentos de HTML"
+        description="En este post encontrarás todos los fundamentos para aprender HTML"
+        alt="imagen de html"
+      />
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298611/css_zcgxc7.jpg"
+        date="Nov 28, 2016"
+        time="4"
+        path="/posts/frontend/css"
+        title="Fundamentos de CSS"
+        description="En este post encontrarás todos los fundamentos para aprender CSS"
+        alt="imagen de CSS"
+      />
+    </section>
+
+    <section class="w-full grid gap-8 md:grid-cols-6 mt-10">
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298766/js_dq9lju.jpg"
+        date="Dic 20, 2014"
+        time="3"
+        path="/posts/frontend/js"
+        title="Fundamentos de Javasript"
+        description="En este post encontrarás todos los fundamentos para aprender JavaScript"
+        alt="imagen de javascript"
+      />
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298768/react_li2alb.jpg"
+        date="Mar 20, 2017"
+        time="15"
+        path="/posts/frontend/react"
+        title="Fundamentos de React Js"
+        description="En este post encontrarás todos los fundamentos para aprender React Js"
+        alt="imagen de react js"
+      />
+    </section>
+  </main>
+</Layout>

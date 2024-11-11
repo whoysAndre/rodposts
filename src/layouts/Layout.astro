@@ -1,0 +1,64 @@
+---
+// Supports weights 200-800
+import { ViewTransitions } from 'astro:transitions';
+import '@fontsource-variable/manrope';
+import Header from '@components/header/Header.astro';
+
+interface Props {
+	title: string;
+	description?:string;
+	keywords?:string;
+}
+
+const { title,description,keywords } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description}/>
+		<meta name="keywords" content={keywords}/>
+		<meta name="robots" content="index, follow" />
+		<title>{title}</title>
+		<ViewTransitions/>
+		</head>
+	</head>
+	<body class="mx-5 md:mx-10">
+		<Header/>
+		<slot/>
+		<footer class="w-full border-t-2 mt-14 text-center">
+			<p class="mt-5">© 2024 Rodrigo André. All rights reserved.</p>
+		</footer>
+	</body>
+</html>
+
+<style is:global>
+	:root[data-theme="light"] {
+		--bg-color: #ffffff;
+		--text-color: #000000;
+		--card-bg: #f0f0f0;
+		--shadow: rgba(0, 0, 0, 0.1);
+	}
+
+	:root[data-theme="dark"] {
+		--bg-color: #000000;
+		--text-color: #ffffff;
+		--card-bg: #2d2d2d;
+		--shadow: rgba(255, 255, 255, 0.1);
+	}
+
+	body {
+		margin: 0;
+		padding: 20px;
+		background-color: var(--bg-color);
+		color: var(--text-color);
+		font-family: 'Manrope Variable', sans-serif;
+		transition:
+			background-color 0.3s,
+			color 0.3s;
+	}
+</style>

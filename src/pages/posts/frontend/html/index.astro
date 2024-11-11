@@ -1,0 +1,263 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from 'astro-cloudinary';
+import CodeBlock from "@components/react/CodeBlock";
+---
+
+<Layout 
+  title="Blog | Html"
+  description="Aprende los fundamentos de HTML con este tutorial completo, cubriendo estructura básica, etiquetas comunes y ejemplos prácticos para empezar a crear sitios web."
+  keywords="HTML, tutorial HTML, desarrollo web, etiquetas HTML, estructura HTML, lenguaje de marcado"
+>
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Jun 28, 2015</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">Fundamentos HTML</h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298765/html_oasgef.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="lenguaje de marcado html"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción a HTML</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#quehtml"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es HTML?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#estructura"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Estructura Básica</a
+            >
+          </li>
+          <li>
+            <a
+              href="#etiquetas"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Etiquetas más Comunes</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">
+          Introducción a HTML: La Base de Todo Sitio Web
+        </h1>
+        <p class="mb-4">
+          El desarrollo web comienza con una comprensión sólida de HTML
+          (HyperText Markup Language), el lenguaje de marcado utilizado para
+          estructurar contenido en la web. Si estás iniciando tu camino en el
+          desarrollo frontend, aprender HTML es fundamental, ya que es la base
+          sobre la que construirás todos tus proyectos web.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="quehtml">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es HTML?</h1>
+        <p class="mb-4">
+          HTML es un lenguaje de marcado, no un lenguaje de programación. Esto
+          significa que HTML no se utiliza para realizar cálculos o procesos
+          lógicos, sino para estructurar y dar formato a los documentos en la
+          web. Su propósito principal es definir la estructura básica de una
+          página web, utilizando una serie de etiquetas que le indican al
+          navegador cómo debe presentar el contenido.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="estructura">
+        <h1 class="text-3xl font-bold mb-6">
+          Estructura Básica de un Documento HTML
+        </h1>
+        <p class="mb-4">
+          Un archivo HTML típico tiene una estructura básica con etiquetas que
+          lo envuelven. Aquí tienes un ejemplo simple de un documento HTML:
+        </p>
+        <CodeBlock
+          client:visible
+          language="html"
+          code=`
+            <!DOCTYPE html>
+            <html lang="es">
+            <head>
+              <meta charset="UTF-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1.0">
+              <title>Mi Primera Página Web</title>
+            </head>
+            <body>
+              <h1>Hola, Mundo!</h1>
+              <p>Bienvenidos a mi primera página web hecha con HTML.</p>
+            </body>
+            </html>
+          `
+        />
+      </article>
+      <article class="p-6 rounded-lg" id="etiquetas">
+        <h1 class="text-3xl font-bold mb-6">Las Etiquetas HTML Más Comunes</h1>
+        <p class="mb-4">
+          Existen cientos de etiquetas HTML, pero algunas de las más
+          fundamentales para comenzar incluyen:
+        </p>
+
+        <ul>
+          <li>
+            <strong class="text-xl">{`Encabezados (<h1> - <h6>)`}</strong>
+            <p class="mt-2">
+              {
+                `Los encabezados se utilizan para estructurar el contenido
+              jerárquicamente. <h1>
+                es el más importante y generalmente se usa para el título
+                principal de la página. A medida que el número aumenta (hasta <h6
+                >
+                  ), la importancia del encabezado disminuye.
+                </h6>
+              </h1>`
+              }
+            </p>
+            <CodeBlock
+              client:visible
+              language="html"
+              code=`
+            <h1>Este es el título principal</h1>
+<h2>Subtítulo</h2>
+          `
+            />
+          </li>
+
+          <li>
+            <strong class="text-xl">{`Párrafos (<p>)`}</strong>
+            <p class="mt-2">
+              {
+                `Se usan para agrupar texto en un bloque. Los párrafos 
+                 suelen ser la unidad básica de texto en la mayoría de 
+                 los sitios web.`
+              }
+            </p>
+            <CodeBlock
+              client:visible
+              language="html"
+              code=`
+                <p>Este es un párrafo de texto.</p>
+              `
+            />
+          </li>
+
+          <li>
+            <strong class="text-xl">{`Enlaces (<a>)`}</strong>
+            <p class="mt-2">
+              {
+                `La etiqueta <a> se utiliza para crear enlaces a otras páginas o recursos en la web. 
+                se define con el atributo href, que indica la URL del destino.`
+              }
+            </p>
+            <CodeBlock
+              client:visible
+              language="html"
+              code=`
+                <a href="https://www.example.com">Visitar el sitio web</a>
+              `
+            />
+          </li>
+
+          <li>
+            <strong class="text-xl">{`Imágenes (<img>)`}</strong>
+            <p class="mt-2">
+              {
+                `
+                  La etiqueta <img> se usa para insertar imágenes. 
+                  Requiere el atributo src, que define la ruta de la imagen, y alt, 
+                  que proporciona una descripción alternativa en caso de que la 
+                  imagen no pueda mostrarse.
+                `
+              }
+            </p>
+            <CodeBlock
+              client:visible
+              language="html"
+              code=`
+                <img src="imagen.jpg" alt="Descripción de la imagen">
+              `
+            />
+          </li>
+
+          <li>
+            <strong class="text-xl">{`Listas (<ul>, <ol>, <li>)`}</strong>
+            <p class="mt-2">
+              {
+                `
+                  Las listas desordenadas (<ul>) y ordenadas (<ol>) se utilizan 
+                  para agrupar elementos de lista, 
+                  y cada elemento de lista se define con la etiqueta <li>.
+                `
+              }
+            </p>
+            <CodeBlock
+              client:visible
+              language="html"
+              code=`
+                <ul>
+    <li>Primer elemento de la lista</li>
+    <li>Segundo elemento de la lista</li>
+</ul>
+
+              `
+            />
+          </li>
+
+          <li>
+            <strong class="text-xl">{`Tablas (<table>, <tr>, <td>)`}</strong>
+            <p class="mt-2">
+              {
+                `
+                  Las tablas se utilizan para organizar datos en filas y columnas.
+                `
+              }
+            </p>
+            <CodeBlock
+              client:visible
+              language="html"
+              code=
+              `
+                <table>
+                  <tr>
+                    <td>Nombre</td>
+                    <td>Edad</td>
+                  </tr>
+                  <tr>
+                    <td>Juan</td>
+                    <td>25</td>
+                  </tr>
+                </table>
+              `
+            />
+          </li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</Layout>

@@ -1,0 +1,127 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from 'astro-cloudinary';
+import { Icon } from "astro-icon/components";
+---
+
+<Layout 
+  title="Blog | Streamers"
+  description="Descubre los mejores streamers y youtubers que te ayudarán en tu camino como desarrollador web. Aprende de expertos y empieza a mejorar tus habilidades hoy mismo."
+  keywords="streamers, youtubers, programación, desarrollo web, aprender a programar, tutoriales, midu, fernando herrera"
+>
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Feb 10, 2020</span>
+      </p>
+
+      <h1 class="font-extrabold  text-2xl md:text-5xl mt-1">
+        Streamers y/o youtubers
+      </h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298774/redes_s9kimj.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="Chico programando"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+  <section class="w-full grid gap-6 md:grid-cols-6 mt-4">
+    <a
+      href="https://www.youtube.com/@midulive"
+      class="w-full col-span-3 relative"
+      id="link-midu"
+    >
+      <CldImage
+        width={1920}
+        height={1080}
+        src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298767/midu_kz5wfz.jpg"
+        alt="Midudev streamer"
+        class="rounded-md transition-transform duration-300 ease-in-out transform"
+        id="img-midu"
+      />
+      <div
+        class="hidden absolute top-0 left-0 w-full h-full justify-center items-center"
+        id="logo-midu"
+      >
+        <Icon size={60} name="icon-youtube" />
+        <p class="font-extrabold text-2xl">Empieza ya!</p>
+      </div>
+    </a>
+    <a
+      href="https://fernando-herrera.com/"
+      class="w-full col-span-3 relative"
+      id="link-fernando"
+    >
+      <CldImage
+        width={1920}
+        height={1080}
+        src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298643/devtalles_ar9kri.jpg"
+        alt="Midudev streamer"
+        class="rounded-md transition-transform duration-300 ease-in-out transform"
+        id="img-fernando"
+      />
+      <div
+        class="hidden absolute top-0 left-0 w-full h-full justify-center items-center"
+        id="logo-fernando"
+      >
+        <Icon size={60} name="icon-twitch" />
+        <p class="font-extrabold text-2xl">Empieza ya!</p>
+      </div>
+    </a>
+  </section>
+</Layout>
+
+
+<script>
+  function setupEventListeners() {
+    const linkMidu = document.getElementById("link-midu") as HTMLElement;
+    const imgMidu = document.getElementById("img-midu") as HTMLElement;
+    const linkFernando = document.getElementById(
+      "link-fernando",
+    ) as HTMLElement;
+    const imgFernando = document.getElementById("img-fernando") as HTMLElement;
+    const logoMidu = document.getElementById("logo-midu") as HTMLElement;
+    const logoFernando = document.getElementById(
+      "logo-fernando",
+    ) as HTMLElement;
+
+    if (linkMidu && imgMidu && logoMidu) {
+      linkMidu.addEventListener("mouseenter", () => {
+        logoMidu.classList.remove("hidden");
+        logoMidu.classList.add("flex");
+        imgMidu.classList.add("scale-105", "opacity-50");
+      });
+
+      linkMidu.addEventListener("mouseleave", () => {
+        logoMidu.classList.remove("flex");
+        logoMidu.classList.add("hidden");
+        imgMidu.classList.remove("scale-105", "opacity-50");
+      });
+    }
+
+    if (linkFernando && imgFernando && logoFernando) {
+      linkFernando.addEventListener("mouseenter", () => {
+        logoFernando.classList.remove("hidden");
+        logoFernando.classList.add("flex");
+        imgFernando.classList.add("scale-105", "opacity-50");
+      });
+
+      linkFernando.addEventListener("mouseleave", () => {
+        logoFernando.classList.remove("flex");
+        logoFernando.classList.add("hidden");
+        imgFernando.classList.remove("scale-105", "opacity-50");
+      });
+    }
+  }
+
+  // Ejecutar cuando el script se carga inicialmente
+  setupEventListeners();
+
+  // Ejecutar después de cada navegación con view transitions
+  document.addEventListener("astro:page-load", setupEventListeners);
+</script>

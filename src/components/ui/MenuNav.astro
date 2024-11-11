@@ -1,0 +1,120 @@
+---
+import { Icon } from "astro-icon/components";
+
+// Tipos y constantes
+type ValidRoutes =
+  | "/"
+  | "startnow"
+  | "frontend"
+  | "backend"
+  | "devops"
+  | "extras";
+
+interface NavItem {
+  path: string;
+  label: string;
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { path: "/", label: "Ver todos" },
+  { path: "/posts/frontend", label: "Frontend" },
+  { path: "/posts/backend", label: "Backend" },
+  { path: "/posts/extras", label: "Otros" },
+];
+
+const TITLE_SPANISH: Record<ValidRoutes, string> = {
+  "/": "Todos",
+  startnow: "Empieza ya",
+  frontend: "Frontend",
+  backend: "Backend",
+  devops: "Devops",
+  extras: "Otros",
+};
+
+// Lógica para determinar la ruta actual
+const { pathname } = Astro.url;
+
+function getCurrentRoute(): ValidRoutes {
+  // Limpiamos la ruta eliminando trailing slashes
+  const cleanPath = pathname.replace(/\/+$/, "");
+
+  // Si es la raíz
+  if (cleanPath === "" || cleanPath === "/") {
+    return "/";
+  }
+
+  // Obtenemos el último segmento de la ruta
+  const segments = cleanPath.split("/");
+  const lastSegment = segments[segments.length - 1] as ValidRoutes;
+
+  return lastSegment || "/";
+}
+
+const currentRoute = getCurrentRoute();
+
+// Función helper para verificar si una ruta está activa
+function isActiveRoute(path: string): boolean {
+  if (path === "/") {
+    return pathname === "/" || pathname === "";
+  }
+  return pathname === path || pathname.replace(/\/+$/, "") === path;
+}
+---
+
+<div class="mt-14">
+  <div class="flex items-center gap-4">
+    <Icon name="icon-blog" size={45} />
+    <h1 class="text-4xl font-extrabold capitalize">
+      {TITLE_SPANISH[currentRoute]}
+    </h1>
+  </div>
+
+  <!-- BLOGS NAV -->
+  <nav
+    class="hidden md:flex gap-10 border-b-2 mt-7 pb-3 text-[1.1rem] font-bold"
+  >
+    {
+      NAV_ITEMS.map(({ path, label }) => (
+        <div class="relative">
+          <a
+            href={path}
+            class:list={[
+              "select",
+              {
+                active: isActiveRoute(path),
+              },
+            ]}
+          >
+            {label}
+          </a>
+        </div>
+      ))
+    }
+  </nav>
+</div>
+
+<style>
+  .select {
+    position: relative;
+    display: inline-block;
+  }
+
+  .select::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: purple;
+    left: 0;
+    bottom: -14px; /* Ajustado para mejor posicionamiento */
+    transition: width .9s ease-in-out;
+  }
+
+  .select:hover::after {
+    width: 100%;
+  }
+
+  .active::after {
+    width: 100%;
+  }
+</style>

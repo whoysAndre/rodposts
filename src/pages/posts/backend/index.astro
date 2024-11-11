@@ -1,0 +1,51 @@
+---
+import MenuNav from "@components/ui/MenuNav.astro";
+import Layout from "../../../layouts/Layout.astro";
+import PostCard from "@components/posts/PostCard.astro";
+---
+
+<Layout 
+  title="Blog | Backend"
+  description="Explora los fundamentos de los principales frameworks y lenguajes backend: aprende Express.js, Spring Boot y Golang. Conviértete en un desarrollador backend sólido con estos tutoriales."  
+  keywords="desarrollo web, backend, Express.js, Spring Boot, Golang, fundamentos, frameworks, lenguajes de programación, aprender a programar, tutoriales"
+  >
+  <MenuNav />
+
+  <main class="mt-16">
+    <section class="w-full grid gap-8 md:grid-cols-6">
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731342968/express_yrjb8o.jpg"
+        date="Feb 28, 2018"
+        time="50"
+        path="/posts/backend/express"
+        title="Fundamentos de Express Js"
+        description="En este post encontrarás todos los fundamentos sobre Express js"
+        alt="imagen de framenwork express"
+      />
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731343000/spring_llp4tc.jpg"
+        date="Nov 28, 2016"
+        time="4"
+        path="/posts/backend/spring"
+        title="Fundamentos de Spring Boot"
+        description="En este post encontrarás todos los fundamentos sobre Spring Boot"
+        alt="imagen de framenwork de java spring"
+      />
+    </section>
+
+    <section class="w-full grid gap-8 md:grid-cols-6 mt-10">
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731342973/go_baqcyn.jpg"
+        date="Mar 10, 2020"
+        time="3"
+        path="/posts/backend/go"
+        title="Fundamentos de Golang"
+        description="En este post encontrarás todos los fundamentos sobre Go"
+        alt="imagen del framenwork golang"
+      />
+    </section>
+  </main>
+</Layout>

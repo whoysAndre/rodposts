@@ -1,0 +1,148 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from "astro-cloudinary";
+---
+
+<Layout title="Blog | Spring Boot ">
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Nov 28, 2016</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">
+        Fundamentos de Spring Boot
+      </h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731343000/spring_llp4tc.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="imagen de framenwork de java spring"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción a Spring Boot</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#queexpress"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es Spring Boot?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#caracteristicas"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Características clave de Spring Boot</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">
+          Introducción a Spring Boot: Simplificando el Desarrollo de
+          Aplicaciones Java
+        </h1>
+        <p class="mb-4">
+          El desarrollo de aplicaciones empresariales en Java ha sido
+          históricamente conocido por su complejidad, configuraciones manuales y
+          largas fases de desarrollo. Sin embargo, con la llegada de Spring
+          Boot, este panorama cambió por completo. Spring Boot es una
+          herramienta poderosa dentro del ecosistema Spring Framework, diseñada
+          para simplificar la creación de aplicaciones Java al eliminar gran
+          parte de la configuración y el código boilerplate. Lanzado en 2013,
+          Spring Boot permite a los desarrolladores crear aplicaciones
+          independientes, listas para producción, con un mínimo esfuerzo. Con
+          características como la configuración automática, servidores embebidos
+          y una amplia compatibilidad con otros módulos de Spring, Spring Boot
+          ha ganado popularidad en la comunidad de desarrolladores Java y se ha
+          convertido en uno de los marcos de desarrollo más utilizados para
+          construir aplicaciones web y microservicios.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="queexpress">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es Spring Boot?</h1>
+        <p class="mb-4">
+          Spring Boot es un marco de trabajo basado en el popular Spring
+          Framework de Java. Su objetivo principal es simplificar el proceso de
+          desarrollo de aplicaciones al proporcionar una configuración mínima,
+          un conjunto de herramientas preconfiguradas y una rápida puesta en
+          marcha de aplicaciones Java. Con Spring Boot, los desarrolladores
+          pueden crear aplicaciones productivas sin la necesidad de una
+          configuración extensa o la integración manual de bibliotecas. Una de
+          las principales ventajas de Spring Boot es su enfoque en la convención
+          sobre configuración, lo que significa que proporciona una
+          configuración predeterminada que funciona en la mayoría de los casos,
+          pero que también se puede personalizar fácilmente. Esto reduce
+          considerablemente el tiempo y el esfuerzo requerido para comenzar con
+          un proyecto.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="carateristicas">
+        <h1 class="text-3xl font-bold mb-6">
+          Características clave de Spring Boot:
+        </h1>
+        <ul class="flex flex-col gap-2 list-decimal">
+          <li>
+            <strong>Autoconfiguración:</strong>
+            <p>
+              Spring Boot detecta automáticamente las bibliotecas presentes en
+              tu proyecto y configura tu aplicación de manera adecuada.
+            </p>
+          </li>
+          <li>
+            <strong>Servidor embebido:</strong>
+            <p>
+              Puedes ejecutar aplicaciones Spring Boot sin la necesidad de un
+              servidor de aplicaciones externo, ya que incluye servidores
+              embebidos como Tomcat o Jetty.
+            </p>
+          </li>
+          <li>
+            <strong>Sin archivos de configuración XML:</strong>
+            <p>
+              A diferencia de versiones anteriores de Spring, Spring Boot
+              elimina la necesidad de configurar archivos XML, simplificando
+              enormemente la gestión del proyecto.
+            </p>
+          </li>
+          <li>
+            <strong>Dependencias de inicio (Starters):</strong>
+            <p>
+              Spring Boot ofrece un conjunto de dependencias preconfiguradas
+              para diferentes tipos de aplicaciones, lo que hace más fácil
+              integrar bibliotecas y herramientas comunes.
+            </p>
+          </li>
+          <li>
+            <strong>Actuadores (Actuators):</strong>
+            <p>
+              Spring Boot viene con una serie de métricas y herramientas de
+              monitoreo que permiten a los desarrolladores obtener información
+              en tiempo real sobre el estado de su aplicación.
+            </p>
+          </li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</Layout>

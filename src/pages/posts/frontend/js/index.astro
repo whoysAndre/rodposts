@@ -1,0 +1,237 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from "astro-cloudinary";
+import CodeBlock from "@components/react/CodeBlock";
+---
+
+<Layout 
+  title="Blog | JavaScript"
+  description="Aprende los fundamentos de JavaScript, cómo se utiliza para desarrollar aplicaciones web interactivas, y los conceptos clave como funciones, estructuras de control y manipulación del DOM."
+  keywords="JavaScript, fundamentos JavaScript, programación web, funciones JavaScript, variables JavaScript, DOM, desarrollo web, interactividad web, programación front-end, desarrollo full-stack"
+>
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Dic 20, 2014</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">
+        Fundamentos JavaScript
+      </h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298766/js_dq9lju.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="lenguaje de marcado html"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción a JavaScript</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#quejs"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es JavaScript?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#importancia"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Por qué es tan importante JavaScript?</a
+            >
+          </li>
+          <li>
+            <a
+              href="#conceptos"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Conceptos Clave de JavaScript</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">
+          Introducción a JavaScript: El Lenguaje de la Web
+        </h1>
+        <p class="mb-4">
+          En el vasto universo del desarrollo web, JavaScript se ha consolidado
+          como uno de los lenguajes más fundamentales y poderosos. Si alguna vez
+          has interactuado con una página web que cambia de contenido sin
+          recargar la página, que reacciona a tus clics o que te permite
+          completar formularios sin problemas, es muy probable que JavaScript
+          haya sido el responsable detrás de esa experiencia dinámica. Desde su
+          creación en 1995, JavaScript ha evolucionado enormemente, pasando de
+          ser un simple lenguaje de scripting para navegadores a convertirse en
+          una herramienta esencial tanto para el front-end como para el
+          back-end. Gracias a su capacidad para manejar interacciones en tiempo
+          real, gestionar eventos, realizar solicitudes de datos al servidor y
+          mucho más, JavaScript ha transformado la manera en que construimos
+          aplicaciones web modernas. En este artículo exploraremos los
+          fundamentos de JavaScript, sus características principales, y cómo se
+          utiliza en el desarrollo web para crear interfaces ricas y dinámicas.
+          Ya sea que estés comenzando en el mundo de la programación o que
+          tengas experiencia previa, entender los conceptos básicos de
+          JavaScript es crucial para ser un desarrollador web completo.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="quejs">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es JavaScript?</h1>
+        <p class="mb-4">
+          JavaScript es un lenguaje de programación de alto nivel, dinámico y
+          con tipado débil. Originalmente creado para agregar interactividad a
+          las páginas web, hoy en día es un lenguaje fundamental para el
+          desarrollo web moderno. Es un lenguaje que se ejecuta en el navegador
+          del usuario, lo que lo convierte en una herramienta esencial para
+          crear experiencias web dinámicas y reactivas. Es importante entender
+          que JavaScript es diferente de otros lenguajes como HTML y CSS.
+          Mientras que HTML es responsable de la estructura de una página y CSS
+          de su estilo visual, JavaScript se ocupa de la funcionalidad y la
+          interactividad.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="importancia">
+        <h1 class="text-3xl font-bold mb-6">
+          ¿Por qué es tan importante JavaScript?
+        </h1>
+        <ul class="flex flex-col gap-2">
+          <li>
+            <strong>Interactividad:</strong>
+            <p>
+              Permite crear páginas web interactivas, desde botones que
+              responden al clic hasta formularios que validan datos en tiempo
+              real.
+            </p>
+          </li>
+          <li>
+            <strong>Desarrollo Full-Stack:</strong>
+            <p>
+              Con el tiempo, JavaScript ha evolucionado más allá del navegador.
+              Hoy en día, frameworks como Node.js permiten usar JavaScript en el
+              servidor, lo que permite desarrollar aplicaciones completas con un
+              solo lenguaje.
+            </p>
+          </li>
+          <li>
+            <strong>Ecosistema:</strong>
+            <p>
+              La comunidad de JavaScript es enorme, lo que ha llevado al
+              desarrollo de múltiples librerías y frameworks como React,
+              Angular, Vue.js, Express.js, y muchos más, que hacen el desarrollo
+              de aplicaciones más eficiente y escalable.
+            </p>
+          </li>
+        </ul>
+      </article>
+      <article class="p-6 rounded-lg" id="importancia">
+        <h1 class="text-3xl font-bold mb-6">Conceptos Clave de JavaScript</h1>
+        <ul>
+          <li>
+            <strong>Variables y Tipos de Datos</strong>
+            <p>
+              En JavaScript, puedes declarar variables usando var, let o const,
+              y los tipos de datos incluyen números, cadenas de texto (strings),
+              booleanos, objetos, arreglos (arrays), y más.
+            </p>
+            <CodeBlock
+              client:visible
+              language="javascript"
+              code=`
+                let nombre = "Juan";     // String
+let edad = 30;           // Number
+const esMayor = true;    // Boolean
+
+              `
+            />
+          </li>
+          <li>
+            <strong>Funciones</strong>
+            <p>
+              Las funciones en JavaScript permiten agrupar bloques de código
+              reutilizables. Existen diferentes formas de definir funciones:
+            </p>
+            <CodeBlock
+              client:visible
+              language="javascript"
+              code=`
+              //DECLARATIVA
+function saludar(nombre) {
+  return "Hola, " + nombre;
+}
+//Función Expresión:
+const saludar = function(nombre) {
+  return "Hola, " + nombre;
+};
+//ARROW FUNCTION
+ const saludar = (nombre) => "Hola, " + nombre;
+              `
+            />
+          </li>
+          <li>
+            <strong>Estructuras de Control</strong>
+            <p>
+              JavaScript permite usar estructuras como if, else, switch, for,
+              while, y do-while para controlar el flujo de ejecución del
+              programa.
+            </p>
+            <CodeBlock
+              client:visible
+              language="javascript"
+              code=`
+                if (edad >= 18) {
+  console.log("Eres mayor de edad.");
+} else {
+  console.log("Eres menor de edad.");
+}
+              `
+            />
+          </li>
+          <li>
+            <strong>Manipulación del DOM</strong>
+            <p>
+              Una de las características más poderosas de JavaScript es su
+              capacidad para interactuar con el DOM (Document Object Model).
+              Esto permite modificar el contenido, estructura y estilo de una
+              página web dinámicamente.
+            </p>
+            <CodeBlock
+              client:visible
+              language="javascript"
+              code=`
+                // Seleccionamos un elemento del DOM
+let boton = document.getElementById("miBoton");
+
+// Le asignamos un evento de clic
+boton.addEventListener("click", () => {
+  alert("¡Has hecho clic en el botón!");
+});
+
+              `
+            />
+          </li>
+          
+
+        </ul>
+      </article>
+    </main>
+  </div>
+</Layout>

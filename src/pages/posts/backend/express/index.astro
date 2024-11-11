@@ -1,0 +1,147 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from "astro-cloudinary";
+---
+
+<Layout title="Blog | Express ">
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Feb 28, 2018</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">
+        Fundamentos Express js
+      </h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731342968/express_yrjb8o.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="imagen de framenwork express"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción a Express.js</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#queexpress"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es Express.js?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#caracteristicas"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Características principales de Express</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">
+          Introducción a Express.js: El Framework Minimalista para Node.js
+        </h1>
+        <p class="mb-4">
+          Cuando se trata de desarrollar aplicaciones web y APIs con Node.js,
+          uno de los frameworks más populares y ampliamente utilizados es
+          Express.js. Express es un framework minimalista que simplifica el
+          proceso de construir servidores web robustos y eficientes. Su diseño
+          minimalista y flexible lo convierte en la opción ideal para
+          desarrolladores que buscan una solución sencilla pero poderosa para
+          crear aplicaciones backend. Lanzado en 2010 por TJ Holowaychuk,
+          Express rápidamente se convirtió en una de las herramientas más
+          elegidas en el ecosistema de Node.js. En lugar de imponer una
+          estructura rígida, Express permite a los desarrolladores tener total
+          control sobre la arquitectura de la aplicación, lo que lo hace
+          altamente personalizable. Con su sencillo conjunto de herramientas,
+          puedes manejar rutas, solicitudes HTTP, middlewares, y mucho más, de
+          manera rápida y eficiente. Una de las principales ventajas de usar
+          Express es su capacidad para integrarse fácilmente con otras
+          tecnologías y bibliotecas. Ya sea que estés construyendo una API
+          RESTful, un servidor web o una aplicación de una sola página (SPA),
+          Express proporciona la base perfecta sobre la que puedes construir.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="queexpress">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es Express.js?</h1>
+        <p class="mb-4">
+          Express.js es un framework web para Node.js que facilita la creación
+          de aplicaciones web y APIs. Es conocido por ser minimalista, rápido y
+          flexible, lo que significa que no impone una estructura rígida sobre
+          cómo debes organizar tu aplicación. Esto le da al desarrollador la
+          libertad de decidir cómo manejar las rutas, los controladores, el
+          manejo de peticiones HTTP y la lógica de la aplicación. Al ser
+          construido sobre Node.js, Express aprovecha su capacidad de manejar
+          múltiples conexiones simultáneas de manera eficiente, lo que lo
+          convierte en una excelente opción para aplicaciones que requieren alto
+          rendimiento y escalabilidad.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="carateristicas">
+        <h1 class="text-3xl font-bold mb-6">
+          Características principales de Express
+        </h1>
+        <ul class="flex flex-col gap-2 list-decimal">
+          <li>
+            <strong>Rutas Simples:</strong>
+            <p>
+              Express facilita la creación de rutas HTTP (GET, POST, PUT,
+              DELETE) para manejar las solicitudes de los usuarios.
+            </p>
+          </li>
+          <li>
+            <strong>Middleware:</strong>
+            <p>
+              Los middlewares en Express permiten manipular las solicitudes
+              antes de que lleguen a las rutas. Esto puede incluir tareas como
+              validación, autenticación o manipulación de datos.
+            </p>
+          </li>
+          <li>
+            <strong>Manejo de Errores:</strong>
+            <p>
+              Express proporciona un manejo de errores robusto, lo que facilita
+              la identificación y solución de problemas durante el desarrollo.
+            </p>
+          </li>
+          <li>
+            <strong>Extensible:</strong>
+            <p>
+              Al ser modular, Express permite integrar fácilmente otras
+              bibliotecas y herramientas, lo que te permite agregar
+              funcionalidades como bases de datos, autenticación o logging con
+              facilidad.
+            </p>
+          </li>
+          <li>
+            <strong>Compatible con APIs RESTful:</strong>
+            <p>
+              Express es perfecto para construir APIs RESTful, ya que se adapta
+              bien a la arquitectura de este tipo de aplicaciones.
+            </p>
+          </li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</Layout>

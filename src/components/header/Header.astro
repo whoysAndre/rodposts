@@ -1,0 +1,202 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<header class="py-2">
+  <div class="flex justify-between items-center">
+    <a href="/" class="font-bold">Rodposts</a>
+    <nav class="flex gap-8">
+      <!--TAGS -->
+      <div
+        class="hidden md:flex items-center font-semibold px-2 md:mr-8"
+        style={{
+          borderRight: "2px solid var(--text-color)",
+          transition: "border-color 0.3s",
+        }}
+      >
+        <a href="/tags" class="flex gap-2 items-center">
+          <Icon name="icon-tags" size={20} />
+          Tags
+        </a>
+      </div>
+
+      <!-- Redes -->
+      <div class="flex gap-4 items-center">
+        <a href="https://github.com/whoysAndre" class="hidden md:block hover:opacity-70 transition-opacity">
+          <Icon name="icon-github" size={25} />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/rodrigo-aqui%C3%B1o-valdez-5a314624b"
+          class="hidden md:block hover:opacity-70 transition-opacity"
+        >
+          <Icon name="icon-linkedin" size={25} />
+        </a>
+
+        <a
+          href="https://x.com/?lang=es"
+          class="hidden md:block hover:opacity-70 transition-opacity"
+        >
+          <Icon name="icon-x" size={25} />
+        </a>
+
+        <button
+          id="theme-toggle"
+          class="hover:opacity-70 transition-opacity"
+          aria-label="Toggle theme"
+        >
+          <Icon name="icon-moon" id="moon-icon" size={25} />
+          <Icon name="icon-sun" class="hidden" id="sun-icon" size={25} />
+        </button>
+
+        <button class="md:hidden" id="btn-open-sidebar">
+          <Icon name="icon-hamburger" size={25} />
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Responsive -->
+  <div
+    id="sidebar"
+    class="md:hidden fixed right-0 bottom-0 w-[230px] sm:w-[300px] h-full bg-white shadow-lg z-10 px-8 py-6 transition ease-in-out delay-100 translate-x-full"
+  >
+    <div class="w-full flex justify-end">
+      <button id="btn-close-sidebar">
+        <Icon name="icon-close" size={30} />
+      </button>
+    </div>
+    <!-- NAV -->
+    <nav class="mt-5">
+      <!-- MIS REDES -->
+      <h3 class="text-xl font-bold">Mis redes:</h3>
+      <div class="flex gap-4 items-center mt-3 px-5">
+        <a href="https://github.com/whoysAndre" class="hover:opacity-70 transition-opacity">
+          <Icon name="icon-github" size={25} />
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/rodrigo-aqui%C3%B1o-valdez-5a314624b"
+          class="hover:opacity-70 transition-opacity"
+        >
+          <Icon name="icon-linkedin" size={25} />
+        </a>
+
+        <a
+          href="https://x.com/?lang=es"
+          class="hover:opacity-70 transition-opacity"
+        >
+          <Icon name="icon-x" size={25} />
+        </a>
+      </div>
+
+      <div class="w-full h-1 border-b-2 mt-5"></div>
+
+      <div class="mt-5">
+        <h3 class="text-xl font-bold">Secciones:</h3>
+        <div class="flex flex-col gap-4 mt-3 px-5">
+          <a href="/" class="flex gap-2 font-semibold">
+            <Icon
+              name="icon-home"
+              size={25}
+            />
+            Todos
+          </a>
+          <a href="/posts/frontend" class="flex gap-2 font-semibold">
+            <Icon
+              name="icon-client"
+              size={25}
+            />
+            Frontend
+          </a>
+          <a href="/posts/backend" class="flex gap-2 font-semibold">
+            <Icon
+              name="icon-server"
+              size={25}
+            />
+            Backend
+          </a>
+          <a href="/posts/extras" class="flex gap-2 font-semibold">
+            <Icon
+              name="icon-others"
+              size={25}
+            />
+            Otros
+          </a>
+        </div>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- SHOW SIDEBAR -->
+<script>
+  function showSidebar() {
+    const sidebar = document.getElementById("sidebar") as HTMLElement;
+    const btnOpenSidebar = document.getElementById(
+      "btn-open-sidebar",
+    ) as HTMLButtonElement;
+    const btnCloseSidebar = document.getElementById(
+      "btn-close-sidebar",
+    ) as HTMLButtonElement;
+
+    btnOpenSidebar.addEventListener("click", () => {
+      localStorage.getItem("theme") === "dark"
+        ? sidebar.classList.add("bg-zinc-900", "text-white")
+        : sidebar.classList.remove("bg-zinc-900", "text-white");
+
+      sidebar.classList.remove("translate-x-full");
+      sidebar.classList.add("translate-x-0");
+    });
+
+    btnCloseSidebar.addEventListener("click", () => {
+      sidebar.classList.remove("translate-x-0");
+      sidebar.classList.add("translate-x-full");
+    });
+  }
+  showSidebar();
+  document.addEventListener("astro:after-swap", showSidebar);
+</script>
+
+<!-- THEME -->
+<script>
+  function handleTheme() {
+    const btnChangeMode = document.getElementById(
+      "theme-toggle",
+    ) as HTMLButtonElement;
+    const moonIcon = document.getElementById("moon-icon");
+    const sunIcon = document.getElementById("sun-icon");
+
+    // Verificar tema guardado
+    const savedTheme = localStorage.getItem("theme") || "light";
+
+    // Aplicar el tema guardado
+    document.documentElement.setAttribute("data-theme", savedTheme);
+
+    // Actualizar iconos según el tema
+    if (savedTheme === "dark") {
+      moonIcon?.classList.add("hidden");
+      sunIcon?.classList.remove("hidden");
+    } else {
+      moonIcon?.classList.remove("hidden");
+      sunIcon?.classList.add("hidden");
+    }
+
+    btnChangeMode.addEventListener("click", () => {
+      const currentTheme = document.documentElement.getAttribute("data-theme");
+      const newTheme = currentTheme === "light" ? "dark" : "light";
+
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+
+      // Alternar iconos
+      moonIcon?.classList.toggle("hidden");
+      sunIcon?.classList.toggle("hidden");
+    });
+  }
+  // Ejecutar al cargar la página
+  handleTheme();
+
+  // Ejecutar después de cada navegación con View Transitions
+  document.addEventListener("astro:after-swap", handleTheme);
+</script>

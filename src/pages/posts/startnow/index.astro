@@ -1,0 +1,288 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { CldImage } from 'astro-cloudinary';
+---
+
+<Layout 
+  title="Blog | Empieza ahora!"
+  description="Descubre los pasos clave para comenzar en el desarrollo web: aprende los fundamentos, domina HTML, CSS y JavaScript, práctica con proyectos, usa herramientas de desarrollo y explora frameworks y librerías. Conviértete en un desarrollador web exitoso."
+  keywords="desarrollo web, aprender a programar, HTML, CSS, JavaScript, proyectos, herramientas de desarrollo, frameworks, React, Vue, Node.js, Express, Django"
+  >
+  
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Nov 09, 2024 4min read</span>
+      </p>
+
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">¿Cómo empezar?</h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298775/programing_j3ih1o.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="Chico programando"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <!-- CONTENT -->
+  <div class="flex gap-3 mt-10">
+    <!-- Aside -->
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción</a
+            >
+          </li>
+          <li>
+            <a
+              href="#paso1"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Paso 1: Comprende lo Básico del Desarrollo Web</a
+            >
+          </li>
+          <li>
+            <a
+              href="#paso2"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded transition-colors"
+              >Paso 2: Aprende HTML, CSS y JavaScript</a
+            >
+          </li>
+          <li>
+            <a
+              href="#paso3"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Paso 3: Practica con Proyectos Simples</a
+            >
+          </li>
+          <li>
+            <a
+              href="#paso4"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Paso 4: Aprende a Usar Herramientas de Desarrollo</a
+            >
+          </li>
+          <li>
+            <a
+              href="#paso5"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Paso 5: Explora Frameworks y Librerías</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <main class="w-full md:w-3/4">
+      <!-- Introduction -->
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">Introducción</h1>
+        <p class="mb-4">
+          El desarrollo web es una de las habilidades más demandadas en el mundo
+          tecnológico actual. Desde sitios web personales hasta complejas
+          aplicaciones en línea, aprender a desarrollar páginas web te abre un
+          abanico de oportunidades profesionales en diversas industrias.
+        </p>
+      </article>
+
+      <!-- Fundamentals -->
+      <article class="p-6 rounded-lg" id="paso1">
+        <h1 class="text-3xl font-bold mb-6">
+          Paso 1: Comprende lo Básico del Desarrollo Web
+        </h1>
+        <p class="mb-4">
+          El desarrollo web es una de las habilidades más demandadas en el mundo
+          tecnológico actual. Desde sitios web personales hasta complejas
+          aplicaciones en línea, aprender a desarrollar páginas web te abre un
+          abanico de oportunidades profesionales en diversas industrias.
+        </p>
+        <ul class="flex flex-col gap-4 style-list">
+          <li>
+            <strong>Frontend:</strong>
+            <p>
+              Se refiere a la parte de la web que los usuarios ven e interactúan
+              directamente. Aquí es donde trabajas con HTML, CSS y JavaScript.
+            </p>
+          </li>
+          <li>
+            <strong>Backend:</strong>
+            <p>
+              Es la parte que maneja la lógica detrás de la web, interactúa con
+              las bases de datos y asegura que la web funcione correctamente.
+              Para ello, se utilizan lenguajes como PHP, Python, Ruby o Node.js.
+            </p>
+          </li>
+          <li>
+            <strong>Full Stack:</strong>
+            <p>
+              Si te interesa dominar ambas áreas, puedes convertirte en un
+              desarrollador full stack, es decir, un profesional que puede
+              trabajar tanto en el frontend como en el backend.
+            </p>
+          </li>
+        </ul>
+      </article>
+
+      <!-- First 2 -->
+      <article class="p-6 rounded-lg" id="paso2">
+        <h1 class="text-3xl font-bold mb-6">
+          Paso 2: Aprende HTML, CSS y JavaScript
+        </h1>
+        <p class="mb-4">
+          El desarrollo web es una de las habilidades más demandadas en el mundo
+          tecnológico actual. Desde sitios web personales hasta complejas
+          aplicaciones en línea, aprender a desarrollar páginas web te abre un
+          abanico de oportunidades profesionales en diversas industrias.
+        </p>
+        <ul class="flex flex-col gap-4 style-list">
+          <li>
+            <strong>HTML (HyperText Markup Language):</strong>
+            <p>
+              HTML es el lenguaje básico para estructurar una página web.
+              Aprende cómo crear encabezados, párrafos, listas, enlaces,
+              formularios, imágenes y más.
+            </p>
+          </li>
+          <li>
+            <strong>CSS (Cascading Style Sheets):</strong>
+            <p>
+              CSS es el lenguaje que se usa para darle estilo a la estructura
+              creada con HTML. Te permitirá controlar los colores, las fuentes,
+              el diseño y el layout de tu página web.
+            </p>
+          </li>
+          <li>
+            <strong>JavaScript:</strong>
+            <p>
+              JavaScript agrega interactividad a tu sitio web. Con él, podrás
+              hacer que tu página web responda a las acciones del usuario, como
+              hacer clic en botones, validar formularios o crear animaciones.
+            </p>
+          </li>
+        </ul>
+      </article>
+
+      <!-- First 3 -->
+      <article class="p-6 rounded-lg" id="paso3">
+        <h1 class="text-3xl font-bold mb-6">
+          Paso 3: Practica con Proyectos Simples
+        </h1>
+        <p class="mb-4">
+          Una de las mejores formas de aprender es construyendo proyectos
+          reales. Comienza con algo simple, como:
+        </p>
+        <ul class="flex flex-col gap-4 style-list">
+          <li>Una página personal o portafolio.</li>
+          <li>Un blog básico.</li>
+          <li>Una página de aterrizaje (landing page).</li>
+        </ul>
+      </article>
+
+      <!-- First 4 -->
+      <article class="p-6 rounded-lg" id="paso4">
+        <h1 class="text-3xl font-bold mb-6">
+          Paso 4: Aprende a Usar Herramientas de Desarrollo
+        </h1>
+        <ul class="flex flex-col gap-4 style-list">
+          <li>
+            <strong>Editor de código:</strong>
+            <p>
+              Usa un editor de texto como Visual Studio Code o Sublime Text.
+              Estos editores están diseñados para programadores y cuentan con
+              características que facilitan la escritura de código.
+            </p>
+          </li>
+          <li>
+            <strong>Git y GitHub:</strong>
+            <p>
+              Git es una herramienta de control de versiones que te permite
+              llevar un registro de los cambios en tu código. GitHub es una
+              plataforma para alojar y compartir tu código con otros. Aprende a
+              usar ambos para colaborar con otros desarrolladores y mantener tu
+              código organizado.
+            </p>
+          </li>
+          <li>
+            <strong>Navegadores y DevTools:</strong>
+            <p>
+              Familiarízate con las herramientas de desarrollo que ofrecen los
+              navegadores web (como Chrome DevTools) para depurar y probar tu
+              código.
+            </p>
+          </li>
+        </ul>
+      </article>
+
+      <!-- First 5 -->
+      <article class="p-6 rounded-lg" id="paso5">
+        <h1 class="text-3xl font-bold mb-6">
+          Paso 5: Explora Frameworks y Librerías
+        </h1>
+        <ul class="flex flex-col gap-4 style-list">
+          <li>
+            <strong>Frontend:</strong>
+            <p>
+              Una vez tengas una base sólida en HTML, CSS y JavaScript, puedes
+              empezar a explorar frameworks y librerías que facilitan la
+              construcción de sitios web:
+            </p>
+            <p class="mt-2">
+              <strong>React Js:</strong>
+              <span
+                >Una librería de JavaScript popular para crear interfaces de
+                usuario dinámicas.</span
+              >
+            </p>
+            <p class="mt-2">
+              <strong>Vue Js:</strong>
+              <span
+                >Un framework progresivo que se utiliza para construir
+                interfaces interactivas.</span
+              >
+            </p>
+          </li>
+          <li>
+            <strong>Backend:</strong>
+            <p>
+              Si decides adentrarte en el backend, comienza a aprender un
+              lenguaje de servidor y un framework. Algunas opciones populares
+              incluyen:
+            </p>
+            <p class="mt-2">
+              <strong>Node.js:</strong>
+              <span>Para usar JavaScript en el servidor.</span>
+            </p>
+            <p class="mt-2">
+              <strong>Express.js:</strong>
+              <span
+                >Framework para Node.js que facilita la creación de aplicaciones
+                web.</span
+              >
+            </p>
+            <p class="mt-2">
+              <strong>Django:</strong>
+              <span>Un framework de Python para aplicaciones web robustas.</span
+              >
+            </p>
+          </li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</Layout>
+
+<style>
+  .style-list li {
+    list-style: circle;
+  }
+</style>

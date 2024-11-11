@@ -1,0 +1,144 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from "astro-cloudinary";
+---
+
+<Layout title="Blog | Golang ">
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Mar 10, 2020</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">
+        Fundamentos de Golang
+      </h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731342973/go_baqcyn.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="imagen del framenwork golang"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción a Go (Golang)</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#quespring"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es Go (Golang)?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#caracteristicas"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Características principales de Go:</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">
+          Introducción a Go (Golang): Un Lenguaje Rápido y Eficiente para el
+          Desarrollo Backend
+        </h1>
+        <p class="mb-4">
+          En el mundo del desarrollo backend, las necesidades de velocidad,
+          rendimiento y concurrencia son cada vez mayores. En este contexto, Go
+          (también conocido como Golang) se ha destacado como una opción robusta
+          y de alto rendimiento. Desarrollado por Google en 2007 y lanzado al
+          público en 2009, Go es un lenguaje de programación compilado que ha
+          ganado popularidad gracias a su simplicidad, eficiencia y excelente
+          manejo de concurrencia. Go se destaca por su capacidad para manejar
+          múltiples tareas concurrentes de manera eficiente, lo que lo hace
+          ideal para crear aplicaciones web, microservicios y sistemas
+          distribuidos. Su sintaxis simple, tiempos de compilación rápidos y una
+          comunidad activa han ayudado a que se convierta en uno de los
+          lenguajes más populares para el desarrollo de infraestructura y
+          backend en la actualidad.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="quespring">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es Go (Golang)?</h1>
+        <p class="mb-4">
+          Go, también conocido como Golang, es un lenguaje de programación de
+          código abierto desarrollado por Google. Está diseñado para ser rápido,
+          eficiente y fácil de usar, y se enfoca en la simplicidad y la claridad
+          del código. Go es un lenguaje compilado que produce ejecutables
+          independientes, lo que significa que no requiere una máquina virtual
+          (como Java) para ejecutarse, lo que contribuye a su alto rendimiento.
+          Go es especialmente adecuado para aplicaciones que requieren alto
+          rendimiento, concurrencia y escalabilidad, como servidores web,
+          sistemas distribuidos y microservicios.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="carateristicas">
+        <h1 class="text-3xl font-bold mb-6">
+          Características principales de Go:
+        </h1>
+        <ul class="flex flex-col gap-2 list-decimal">
+          <li>
+            <strong>Concurrencia:</strong>
+            <p>
+              Go tiene un modelo de concurrencia ligero basado en goroutines,
+              que permite manejar múltiples tareas simultáneamente sin necesidad
+              de múltiples hilos de sistema operativo. Esto hace que Go sea
+              ideal para aplicaciones que requieren alto rendimiento en entornos
+              concurrentes, como servidores web.
+            </p>
+          </li>
+          <li>
+            <strong>Simplicidad:</strong>
+            <p>
+              La sintaxis de Go es minimalista y fácil de aprender, lo que
+              facilita la escritura de código claro y mantenible.
+            </p>
+          </li>
+          <li>
+            <strong>Compilación rápida:</strong>
+            <p>
+              Go tiene tiempos de compilación muy rápidos, lo que permite a los
+              desarrolladores trabajar de manera ágil y eficiente.
+            </p>
+          </li>
+          <li>
+            <strong>Sistema de tipos estático:</strong>
+            <p>
+              Go es un lenguaje con tipado estático, lo que significa que los
+              errores de tipo se detectan en tiempo de compilación, lo que
+              mejora la seguridad del código.
+            </p>
+          </li>
+          <li>
+            <strong>Soporte para aplicaciones de red:</strong>
+            <p>
+              Go proporciona potentes bibliotecas estándar para trabajar con
+              redes, lo que facilita la creación de aplicaciones de servidor,
+              APIs y microservicios.
+            </p>
+          </li>
+        </ul>
+      </article>
+    </main>
+  </div>
+</Layout>

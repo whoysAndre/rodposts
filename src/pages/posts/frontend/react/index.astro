@@ -1,0 +1,171 @@
+---
+import Layout from "src/layouts/Layout.astro";
+import { CldImage } from "astro-cloudinary";
+---
+
+<Layout 
+  title="Blog | React Js"
+  description="Aprende los fundamentos de React.js, una biblioteca popular para crear interfaces de usuario interactivas y dinámicas. Descubre por qué elegir React y cómo sus componentes reutilizables y su Virtual DOM lo hacen ideal para aplicaciones modernas."
+  keywords="React, React.js, fundamentos de React, biblioteca de JavaScript, desarrollo de interfaces de usuario, componentes React, Virtual DOM, React tutorial, React ventajas, React aplicaciones web"
+  >
+  <header class="mt-10">
+    <div class="flex flex-col items-center mb-10">
+      <p class="text-sm">
+        Publicado
+        <span class="font-bold">Mar 20, 2017</span>
+      </p>
+      <h1 class="font-extrabold text-4xl md:text-5xl mt-1">
+        Fundamentos React Js
+      </h1>
+    </div>
+    <CldImage
+      width={1920}
+      height={1080}
+      src="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298768/react_li2alb.jpg"
+      class="md:h-[500px] rounded-md"
+      alt="lenguaje de marcado html"
+    />
+  </header>
+
+  <div class="w-full border-b-2 mt-5"></div>
+  <div class="flex gap-3 mt-10">
+    <aside class="hidden md:block w-full md:w-1/4">
+      <nav class="p-6 rounded-lg">
+        <h2 class="text-xl font-bold mb-4">Menú</h2>
+        <ul class="space-y-2">
+          <li>
+            <a
+              href="#introducción"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >Introducción a React.js</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#quereact"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Qué es React?</a
+            >
+          </li>
+
+          <li>
+            <a
+              href="#seleccion"
+              class="block font-bold py-2 px-4 hover:bg-indigo-300 rounded-lg transition-colors"
+              >¿Por qué Elegir React?</a
+            >
+          </li>
+        
+        </ul>
+      </nav>
+    </aside>
+    <main class="w-full md:w-3/4">
+      <article class="p-6 rounded-lg" id="introducción">
+        <h1 class="text-3xl font-bold mb-6">
+          Introducción a React.js: La Biblioteca que Revoluciona el Desarrollo
+          de Interfaces Web
+        </h1>
+        <p class="mb-4">
+          En el mundo del desarrollo web, la necesidad de crear interfaces
+          interactivas, rápidas y escalables ha llevado al surgimiento de
+          diversas tecnologías. Entre ellas, React.js se destaca como una de las
+          herramientas más populares y poderosas para construir aplicaciones web
+          dinámicas. Desarrollado por Facebook en 2013, React ha transformado la
+          forma en que los desarrolladores crean interfaces de usuario (UI). Su
+          enfoque basado en componentes reutilizables y su eficiente sistema de
+          manejo del estado han permitido que React se convierta en una pieza
+          clave para el desarrollo de aplicaciones modernas, desde sitios web
+          sencillos hasta plataformas complejas y aplicaciones móviles. A
+          diferencia de otros frameworks, React no intenta ser una solución
+          todo-en-uno. Se enfoca principalmente en la creación de interfaces,
+          dejando el manejo de otros aspectos como el enrutamiento o el estado
+          global a bibliotecas adicionales, pero a la vez ofrece la flexibilidad
+          de integrarse fácilmente con otras tecnologías. Esto, combinado con su
+          Virtual DOM, que optimiza la actualización del contenido en la página,
+          hace que React sea extremadamente eficiente y adecuado para construir
+          aplicaciones rápidas y escalables. En este artículo, exploraremos los
+          fundamentos de React.js, cómo empezar a usarlo y por qué se ha
+          convertido en una de las bibliotecas más elegidas por los
+          desarrolladores web en todo el mundo. Si estás buscando aprender a
+          crear interfaces modernas y reactivas para tus proyectos, React es sin
+          duda una de las mejores opciones.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="quereact">
+        <h1 class="text-3xl font-bold mb-6">¿Qué es React?</h1>
+        <p class="mb-4">
+          React es una biblioteca de JavaScript de código abierto que permite
+          crear interfaces de usuario interactivas y dinámicas de manera más
+          eficiente y escalable. Fue desarrollada por Facebook en 2013, y desde
+          entonces ha revolucionado la forma en que desarrollamos aplicaciones
+          web modernas. Una de las principales características de React es su
+          enfoque basado en componentes. Un componente en React es una unidad
+          reutilizable de código que puede tener su propia lógica, presentación
+          e incluso manejar su propio estado. Esto facilita el desarrollo y
+          mantenimiento de aplicaciones grandes, ya que el código está más
+          organizado y es más fácil de entender. React no es un framework
+          completo como Angular o Vue.js, sino que se enfoca exclusivamente en
+          la creación de interfaces de usuario (UI). Sin embargo, gracias a su
+          ecosistema, que incluye herramientas como React Router para el
+          enrutamiento y Redux o Context API para el manejo del estado, React
+          puede ser utilizado para construir aplicaciones completas.
+        </p>
+      </article>
+      <article class="p-6 rounded-lg" id="seleccion">
+        <h1 class="text-3xl font-bold mb-6">¿Por qué Elegir React?</h1>
+        <ul class="flex flex-col gap-4 list-decimal">
+          <li>
+            <strong>Reactividad:</strong>
+            <p>
+              React es extremadamente eficiente a la hora de actualizar el DOM
+              (Document Object Model). Gracias a su Virtual DOM, React minimiza
+              las operaciones de actualización del navegador, lo que resulta en
+              aplicaciones más rápidas y con mejor rendimiento.
+            </p>
+          </li>
+          <li>
+            <strong>Componentes Reutilizables:</strong>
+            <p>
+              React se basa en la idea de construir interfaces utilizando
+              componentes. Un componente puede ser tan pequeño como un botón o
+              tan grande como una página completa. Esto permite desarrollar
+              aplicaciones de manera modular, y como los componentes son
+              reutilizables, el código se vuelve más limpio y mantenible.
+            </p>
+          </li>
+          <li>
+            <strong>Unidireccionalidad del Flujo de Datos:</strong>
+            <p>
+              En React, los datos fluyen en una sola dirección. Esto significa
+              que la fuente de verdad para cualquier dato en la aplicación está
+              en el componente "padre", y los componentes hijos simplemente
+              reciben esos datos como props. Esto facilita el manejo y la
+              depuración del estado de la aplicación.
+            </p>
+          </li>
+          <li>
+            <strong>Gran Ecosistema:</strong>
+            <p>
+              React tiene una comunidad activa y una gran cantidad de
+              herramientas y bibliotecas que se integran perfectamente con él,
+              como React Router para el enrutamiento, Redux para el manejo del
+              estado global, y Styled Components para el estilo en componentes.
+            </p>
+          </li>
+          <li>
+            <strong>SEO-Friendly:</strong>
+            <p>
+              Aunque React es principalmente utilizado en aplicaciones de una
+              sola página (SPA, por sus siglas en inglés), con herramientas como
+              Next.js se puede renderizar contenido en el servidor (SSR,
+              Server-Side Rendering), lo que mejora el rendimiento y la
+              optimización para motores de búsqueda (SEO).
+            </p>
+          </li>
+        </ul>
+      </article>
+
+    </main>
+  </div>
+</Layout>

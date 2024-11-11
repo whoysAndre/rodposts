@@ -1,0 +1,41 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import MenuNav from "@components/ui/MenuNav.astro";
+import PostCard from "@components/posts/PostCard.astro";
+---
+
+<Layout 
+  title="Blog | Extras"
+  description="Descubre las últimas tendencias y recursos en el mundo del desarrollo web: explora Astro, el nuevo framework de JavaScript, y conoce a los mejores streamers y youtubers para obtener tutoriales y consejos."
+  keywords="desarrollo web, Astro, framework JavaScript, streamers, YouTubers, tutoriales, recursos, nuevas tecnologías"
+  >
+  
+  <MenuNav />
+
+  <!-- New Tecnology -->
+  <div class="mt-16">
+    <section class="w-full grid gap-x-8 md:grid-cols-6">
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        date="Dic 10, 2022"
+        time="20"
+        path="/posts/astrojs"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298487/astro_tz71rw.jpg"
+        title="Hablemos de astro"
+        description="El nuevo framenwork de JS que viene tomando popularidad"
+        alt="framenwork astro js"
+      />
+      <PostCard
+        classes="col-span-6 md:col-span-3"
+        date="Feb 10, 2020"
+        time="2"
+        path="/posts/streamers"
+        srcImage="https://res.cloudinary.com/dn59rxcsm/image/upload/v1731298774/redes_s9kimj.jpg"
+        title="Streamer y/o youtubers"
+        description="Mejores creadores de contenido dedicados al desarrollo web"
+        alt="los mejores streamers"
+      />
+    </section>
+  </div>
+  
+</Layout>
